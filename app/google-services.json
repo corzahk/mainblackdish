@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1048511111045",
+    "firebase_url": "https://blackdish-3a802.firebaseio.com",
+    "project_id": "blackdish-3a802",
+    "storage_bucket": "blackdish-3a802.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048511111045:android:36011952dea685bfd1aeec",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048511111045-69jg00ub262tac71c3jrs48ivc1o6rss.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "288898f7debd3e3a30e0fcb0bc4a5d852a937d71"
+          }
+        },
+        {
+          "client_id": "1048511111045-1rt2lbs8dk9phbtsb87bmqavmi8i96gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUHtENBca2KZekZpmOTRoMkDKDDrXm4vc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048511111045-1rt2lbs8dk9phbtsb87bmqavmi8i96gj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
