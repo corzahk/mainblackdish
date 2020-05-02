@@ -1,113 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_user">
+    tools:context=".MainActivity">
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/barWhite"
+        android:elevation="8dp"
+        app:itemIconTint="@drawable/item_selected"
 
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="logout"
-        android:text="@string/logeout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="149dp"
-        android:layout_height="147dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="421dp"
-        android:background="@drawable/round_bg3"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/user_image"
-            android:contentDescription="@string/todo" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/profileName"
-        android:layout_width="275dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="@font/roboto_black"
-        android:text="@string/name"
-        android:textColor="#E4D7D7"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
-    <TextView
-        android:id="@+id/profileEmail"
-        android:layout_width="275dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="@font/roboto_black"
-        android:text="@string/emailyou"
-        android:textColor="#E4D7D7"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileName" />
-
-    <TextView
-        android:id="@+id/profilePhone"
-
-        android:layout_width="275dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/roboto_black"
-        android:textColor="#E4D7D7"
-        android:textSize="18sp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/phoneyou"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileEmail" />
-
-    <TextView
-        android:id="@+id/profileAddress"
-        android:layout_width="275dp"
-        android:layout_height="26dp"
-        android:fontFamily="@font/roboto_black"
-        android:textColor="#E4D7D7"
-        android:textSize="18sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/emailyou"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePhone" />
+        app:menu="@menu/bottom_navigation_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

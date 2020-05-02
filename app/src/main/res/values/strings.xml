@@ -15,10 +15,11 @@
     <string name="eat_it">EAT IT</string>
     <string name="logincorreo">Login Correo</string>
     <string name="login_facebook">Login Facebook</string>
-    <string name="facebook_app_id">[APP_ID]</string> <string name="fb_login_protocol_scheme">fb[APP_ID]</string>
+    <string name="facebook_app_id">[APP_ID]</string>
+    <string name="fb_login_protocol_scheme">fb[APP_ID]</string>
     <string name="user">User</string>
     <string name="regisrar">Registrar</string>
-    <string name="count">Usuario para registrar</string>
+    <string name="count">¿Ya tienes una cuenta?</string>
     <string name="newu">Eres nuevo?</string>
     <string name="regi">Crea una cuenta</string>
     <string name="card_text">Card</string>

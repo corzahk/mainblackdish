@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/navigation_restaurant"
+        android:icon="@drawable/ic_restaurant"
+        android:title="" />
+
+    <item android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_top"
+        android:title="" />
+
+    <item android:id="@+id/navigation_promotion"
+        android:icon="@drawable/ic_senalizacion"
+        android:title="" />
+
+    <item android:id="@+id/navigation_category"
+        android:icon="@drawable/ic_category"
+        android:title="" />
+
+
+
+</menu>

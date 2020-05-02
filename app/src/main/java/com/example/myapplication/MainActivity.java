@@ -1,55 +1,49 @@
 package com.example.myapplication;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
+import android.os.Bundle;
+import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
-            TextView fullName,email,phone,address;
-            FirebaseAuth fAuth;
-            FirebaseFirestore fStore;
-            String userId;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "MainActivity";
+
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        phone = findViewById(R.id.profilePhone);
-        address = findViewById(R.id.profileAddress);
-        fullName = findViewById(R.id.profileName);
-        email = findViewById(R.id.profileEmail);
+        bottomNavigationView = findViewById(R.id.bottom_navigation_view);
 
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-        userId = fAuth.getCurrentUser().getUid();
-
-        DocumentReference documentReference = fStore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                phone.setText(documentSnapshot.getString("phone"));
-                fullName.setText(documentSnapshot.getString("fUser"));
-                address.setText(documentSnapshot.getString("address"));
-                email.setText(documentSnapshot.getString("email"));
-            }
-        });
-
-
+        bottomNavigationView.setSelectedItemId(R.id.navigation_restaurant);
     }
-    public void logout(View view){
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
+        Restaurant restaurantFragment = new Restaurant();
+        Promotion promotionFragment = new Promotion();
+        Top topFragment = new Top();
+        Category categoryFragment = new Category();
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.navigation_restaurant:
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.container, restaurantFragment).commit();
+                return true;
+            case R.id.navigation_favorite:
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.container,topFragment).commit();
+                return true;
+            case R.id.navigation_promotion:
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.container,promotionFragment).commit();
+                return true;
+            case R.id.navigation_category:
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.container,categoryFragment).commit();
+                return true;
+        }
+
+        return false;
     }
 }

@@ -11,5 +11,7 @@
         </color>
     <color name="borderbutton4">#D1C4C8C5</color>
     <color name="emailwhite">#F6F1F1</color>
-
+    <color name="whiteTextColor">#fff</color>
+<color name="barWhite">#FFFFFFFF</color>
+    <color name="colorSelecBar">#F4CD02</color>
 </resources>
